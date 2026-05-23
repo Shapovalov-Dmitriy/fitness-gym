@@ -1,0 +1,52 @@
+@use "sass:math";
+
+// ── Функция px → rem ──
+@function rem($pixels) {
+  @return math.div($pixels, 16) * 1rem;
+}
+
+// ── Медиа-запросы (mobile-first) ──
+@mixin mq($breakpoint) {
+  $breakpoints: (
+    "sm": 576px,
+    "md": 768px,
+    "lg": 1024px,
+    "xl": 1280px,
+    "2xl": 1921px,
+  );
+
+  @media (min-width: map-get($breakpoints, $breakpoint)) {
+    @content;
+  }
+}
+
+// ── Flexbox центр ──
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// ── Grid сетка ──
+@mixin grid($cols: 1, $gap: rem(24)) {
+  display: grid;
+  grid-template-columns: repeat($cols, 1fr);
+  gap: $gap;
+}
+
+// ── Тень для карточек ──
+@mixin card-shadow {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+
+  &:hover {
+    box-shadow: 0 8px 32px rgba(255, 107, 53, 0.2);
+  }
+}
+
+// ── Градиент текста ──
+@mixin text-gradient($from, $to) {
+  background: linear-gradient(135deg, $from 0%, $to 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}

@@ -1,0 +1,52 @@
+.hero {
+  position: relative;
+  height: 100vh;
+  background: url("../../img/hero-bg.jpg") center / cover no-repeat;
+  overflow: hidden;
+  &__inner {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  &__content {
+    max-width: 100%;
+    margin-bottom: clamp(5rem, 5.4762rem + -2.381vw, 4rem);
+  }
+
+  &__title {
+    font-size: clamp(2.625rem, 1.7321rem + 4.4643vw, 4.5rem);
+    font-weight: 700;
+    color: var(--text-secondary);
+    line-height: 1.1;
+    margin-bottom: rem(24);
+    text-transform: capitalize;
+  }
+
+  &__text {
+    font-size: clamp(1rem, 0.881rem + 0.5952vw, 1.25rem);
+    font-weight: 400;
+    color: #bdbdbd;
+  }
+
+  &__actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: rem(32);
+  }
+}
+
+.social-box ul {
+  display: flex;
+  align-items: center;
+  gap: rem(24);
+}
+
+.social-box a {
+  svg:hover path {
+    transition: all 0.3s ease;
+    fill: var(--primary-hover);
+  }
+}

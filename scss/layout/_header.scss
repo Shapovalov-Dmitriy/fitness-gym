@@ -1,0 +1,38 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+  padding: rem(10) 0;
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__actions {
+  }
+
+  &__btn {
+    display: none;
+  }
+}
+.logo {
+  width: rem(58);
+  height: rem(54);
+  flex-shrink: 0;
+}
+.desctop-nav {
+  display: none;
+  a {
+    color: #fff;
+  }
+}
+.burger {
+  background-color: var(--color-lite);
+  width: rem(40);
+  height: rem(40);
+  font-size: rem(30);
+  border-radius: var(--radius);
+}

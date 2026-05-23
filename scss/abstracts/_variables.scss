@@ -1,0 +1,34 @@
+:root {
+  // ===== ЦВЕТА =====
+  --bg-dark: #0a0a0a;
+  --bg-card: #141414;
+  --primary: #ff6b35;
+  --primary-hover: #e55a2b;
+  --text-primary: #9e9e9e;
+  --text-secondary: #e0e0e0;
+  --title-color: #424242;
+  --button-color: #212121;
+  --color-lite: #ffffff;
+
+  // ===== ОТСТУПЫ (через rem()) =====
+  --spacing-xs: #{rem(8)};
+  --spacing-sm: #{rem(16)};
+  --spacing-md: #{rem(24)};
+  --spacing-lg: #{rem(32)};
+  --spacing-xl: #{rem(48)};
+
+  // ===== ШРИФТЫ =====
+  --font-family: "Rubik", sans-serif;
+  --second-family: "Signika", sans-serif;
+  // ===== РАЗМЕРЫ ШРИФТОВ =====
+  --text-sm: #{rem(14)};
+  --text-base: #{rem(16)};
+  --text-lg: #{rem(18)};
+  --text-xl: #{rem(24)};
+  --text-2xl: #{rem(32)};
+
+  // ===== ДРУГОЕ =====
+  --radius: #{rem(8)};
+  --container: #{rem(1435)};
+  --transition: all 0.3s ease;
+}

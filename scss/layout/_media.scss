@@ -1,0 +1,78 @@
+@include mq(md) {
+  .desctop-nav {
+    display: block;
+    ul {
+      display: flex;
+      align-items: center;
+      gap: rem(34);
+      a {
+        position: relative;
+        font-weight: 600;
+        font-size: rem(18);
+        line-height: 1.4;
+        letter-spacing: 0.01em;
+        color: var(--text-primary);
+        &:hover {
+          color: var(--color-lite);
+        }
+        &::before {
+          content: "";
+          position: absolute;
+          bottom: -4px;
+          right: 0;
+          width: 0%;
+          height: 2px;
+          background-color: var(--primary);
+          transition: var(--transition);
+        }
+        &:hover::before {
+          width: 100%;
+          right: unset;
+          left: 0;
+        }
+      }
+    }
+  }
+  .burger {
+    display: none;
+  }
+  .header {
+    &__btn {
+      display: block;
+    }
+  }
+
+  .mobile-nav,
+  .overlay {
+    display: none;
+  }
+}
+@include mq(lg) {
+  .header {
+    padding: rem(20) 0;
+  }
+  .hero__content {
+    max-width: rem(512);
+  }
+  .btn {
+    padding: rem(12) rem(24);
+  }
+}
+@include mq("2xl") {
+  .logo {
+    width: rem(88);
+    height: rem(84);
+    img {
+      width: 100%;
+    }
+  }
+  .desctop-nav ul {
+    a {
+      font-size: rem(24);
+    }
+  }
+  .btn {
+    padding: rem(16) rem(28);
+    font-size: rem(20);
+  }
+}
