@@ -24,12 +24,10 @@
     gap: var(--spacing-md);
     padding: var(--spacing-sm);
     border-radius: rem(10);
-    @include card-shadow;
     transition: var(--transition);
     &:hover {
       transform: translateY(-4px);
-      box-shadow: 0 12px 40px rgba(255, 107, 53, 0.25);
-
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
       .choose__item-image {
         background-color: var(--primary); // иконка на оранжевом фоне
       }

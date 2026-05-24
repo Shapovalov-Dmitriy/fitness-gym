@@ -9,7 +9,7 @@
   &__pictures {
     display: grid;
     grid-template-columns: 0.75fr 1.25fr;
-    gap: var(--spacing-lg);
+    gap: var(--spacing-sm);
   }
 
   &__img {
@@ -26,6 +26,7 @@
   }
 
   &__header {
+    flex-direction: column-reverse;
     margin-bottom: var(--spacing-md);
   }
 
