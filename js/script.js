@@ -114,7 +114,56 @@ window.addEventListener('scroll', () => {
 
   lastScrollTop = scrollTop;
 }, { passive: true });
+
+// ===== Анимация чисел =====
+const animateNumbers = () => {
+  // Находим все элементы с data-target
+  const numbers = document.querySelectorAll('[data-target]');
+
+  numbers.forEach(num => {
+    const target = +num.getAttribute('data-target');
+    const suffix = num.dataset.suffix || '+'; // Берём суффикс из HTML (по умолчанию '+')
+    const duration = 2000;
+    let start = 0;
+
+    const step = timestamp => {
+      if (!start) start = timestamp;
+      const progress = Math.min((timestamp - start) / duration, 1);
+      const value = Math.floor(progress * target);
+
+      // Добавляем суффикс из атрибута
+      num.textContent = value + suffix;
+
+      if (progress < 1) {
+        requestAnimationFrame(step);
+      } else {
+        const description = num.nextElementSibling?.textContent || '';
+        num.setAttribute('aria-label', `${description}: ${target}${suffix}`);
+      }
+    };
+
+    requestAnimationFrame(step);
+  });
+};
+
+// ===== IntersectionObserver (запуск при скролле) =====
+const resultsSection = document.querySelector('.results');
+
+if (resultsSection) {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateNumbers();
+        observer.unobserve(entry.target); // Запускаем один раз
+      }
+    });
+  }, { threshold: 0.5 }); // Сработает, когда 50% секции видно
+
+  observer.observe(resultsSection);
+}
+
 // --------------------------------------------------------------------
+
 // ===== ПЛАВНЫЙ СКРОЛЛ С УЧЁТОМ HEADER =====
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {

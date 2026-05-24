@@ -10,7 +10,17 @@ h1 {
 .section-header {
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: var(--spacing-sm);
-  text-align: center;
+
+  &__subtitle {
+    font-size: clamp(1rem, 0.7619rem + 1.1905vw, 1.5rem);
+    font-weight: 400;
+    color: var(--text-primary);
+    line-height: 1.4;
+  }
+}
+.section-header--center {
+  max-width: rem(710);
+  margin: 0 auto;
+  align-items: center;
 }
