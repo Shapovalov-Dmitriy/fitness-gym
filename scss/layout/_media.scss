@@ -94,6 +94,9 @@
   .btn {
     padding: rem(12) rem(24);
   }
+  .choose {
+    padding: rem(125) 0;
+  }
 }
 
 @include mq(xl) {
