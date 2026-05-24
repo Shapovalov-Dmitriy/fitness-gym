@@ -4,20 +4,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/style.css">
+  <meta name="description" content="Сайт тренажерного зала Chamith Fitness">
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <link rel="preload" href="/fonts/Rubik-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/Rubik-Bold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/style.min.css">
   <title>Chamith Fitness | Тренажёрный зал</title>
 </head>
 
 <body>
+  <h1 class="visually-hidden">Сайт тренажерного зала Chamith Fitness</h1>
   <!-- Skip Link для доступности -->
   <a href="#main-content" class="skip-link">Перейти к основному контенту</a>
   <header class="header">
     <div class="container header__inner">
-      <a class="logo" href="#">
-        <img src="./img/logo.png" alt="Логотип: Рука держит гантель, пнадпись по кругу Chamith Fitness">
+      <a class="logo">
+        <img src="./img/logo.webp" alt="Логотип: Рука держит гантель, пнадпись по кругу Chamith Fitness" width="58"
+          height="54">
       </a>
       <!-- Меню десктоп -->
-      <nav class="desctop-nav" aria-label="Основное меню">
+      <nav class="desktop-nav" aria-label="Основное меню">
         <ul>
           <li><a href="#home">Home</a></li>
           <li><a href="#about">About</a></li>
@@ -29,8 +35,18 @@
       <!-- Кнопки заказать и бургер -->
       <div class="header__actions">
         <a class="btn btn--primary header__btn" href="#pricing">Join Now</a>
-        <button class="burger" id="burger-menu" aria-label="Меню" aria-expanded="false"
-          aria-controls="mobile-nav">☰</button>
+        <button class="burger" id="burger-menu" aria-label="Открыть меню" aria-expanded="false"
+          aria-controls="mobile-nav">
+          <svg class="burger__icon" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true">
+            <path class="burger__line burger__line--top" d="M3 6h18" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" />
+            <path class="burger__line burger__line--middle" d="M3 12h18" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" />
+            <path class="burger__line burger__line--bottom" d="M3 18h18" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" />
+          </svg>
+        </button>
       </div>
     </div>
   </header>
@@ -38,7 +54,12 @@
   <div class="overlay" id="overlay" aria-hidden="true"></div>
   <nav class="mobile-nav" id="mobile-nav" role="dialog" aria-modal="true" aria-label="Мобильная навигация"
     aria-hidden="true">
-    <button class="close-btn" id="close-btn" aria-label="Закрыть меню">✕</button>
+    <button class="close-btn" id="close-btn" aria-label="Закрыть меню">
+      <svg class="close-btn__icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+        xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M6 6l12 12M6 18L18 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+      </svg>
+    </button>
     <ul>
       <li><a href="#home">Home</a></li>
       <li><a href="#about">About</a></li>
@@ -47,12 +68,12 @@
     </ul>
   </nav>
 
-  <main>
+  <main id="main-content">
     <!-- Главная секция -->
     <section class="hero">
       <div class="container hero__inner">
         <div class="hero__content">
-          <h2 class="hero__title">Live You Best Life</h2>
+          <h2 class="hero__title">Live Your Best Life</h2>
           <p class="hero__text">At Power World Gyms, we believe that fitness is not<br>just a destination; it's a
             journey
             towards a healthier</p>
@@ -60,9 +81,10 @@
         <div class="hero__actions">
           <a class="btn btn--primary" href="#choose">Get Started</a>
           <div class="social-box">
-            <ul>
-              <li>
-                <a href="twitter">
+            <ul class="social-box__list">
+              <li class="social-box__item">
+                <a class="social-box__link" href="https://twitter.com/chamithfitness" aria-label="twitter"
+                  target="_blank" rel="noopener noreferrer">
                   <svg width="25" height="25" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg"
                     aria-hidden="true">
                     <path
@@ -71,9 +93,10 @@
                   </svg>
                 </a>
               </li>
-              <li>
-                <a href="facebook">
-                  <svg width="25" height="25" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg"
+              <li class="social-box__item">
+                <a class="social-box__link" href="https://facebook.com/chamithfitness" aria-label="facebook"
+                  target="_blank" rel="noopener noreferrer">
+                  <svg width=" 25" height="25" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg"
                     aria-hidden="true">
                     <path
                       d="M18.5619 9.33741C18.5619 13.9694 15.1635 17.8094 10.7272 18.5062V12.0382H12.8843L13.295 9.36217H10.7272V7.62587C10.7272 6.89344 11.0861 6.18036 12.2354 6.18036H13.4025V3.90188C13.4025 3.90188 12.3429 3.7209 11.3305 3.7209C9.216 3.7209 7.83469 5.00244 7.83469 7.32192V9.36141H5.48429V12.0374H7.83469V18.5055C3.39915 17.8079 0 13.9686 0 9.33741C0 4.212 4.15555 0.0564575 9.28097 0.0564575C14.4064 0.0564575 18.5619 4.21124 18.5619 9.33741Z"
@@ -81,9 +104,10 @@
                   </svg>
                 </a>
               </li>
-              <li>
-                <a href="instagram">
-                  <svg width="25" height="25" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg"
+              <li class="social-box__item">
+                <a class="social-box__link" href="https://instagram.com/chamithfitness" aria-label="instagram"
+                  target="_blank" rel="noopener noreferrer">
+                  <svg width=" 25" height="25" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg"
                     aria-hidden="true">
                     <path
                       d="M9.28097 1.67212C11.759 1.67212 12.0529 1.6814 13.0312 1.72626C14.0429 1.77266 15.0847 2.00314 15.8217 2.74021C16.5658 3.48423 16.7893 4.51595 16.8357 5.53069C16.8805 6.50904 16.8898 6.80295 16.8898 9.28097C16.8898 11.759 16.8805 12.0529 16.8357 13.0312C16.79 14.0375 16.5542 15.0893 15.8217 15.8217C15.0777 16.5658 14.0467 16.7893 13.0312 16.8357C12.0529 16.8805 11.759 16.8898 9.28097 16.8898C6.80295 16.8898 6.50904 16.8805 5.53069 16.8357C4.53219 16.79 3.46644 16.5487 2.74021 15.8217C2.00005 15.0816 1.77266 14.0398 1.72626 13.0312C1.6814 12.0529 1.67212 11.759 1.67212 9.28097C1.67212 6.80295 1.6814 6.50904 1.72626 5.53069C1.77189 4.52835 2.0101 3.47031 2.74021 2.74021C3.48268 1.99773 4.51827 1.77266 5.53069 1.72626C6.50904 1.6814 6.80295 1.67212 9.28097 1.67212ZM9.28097 0C6.76042 0 6.44407 0.0108278 5.45413 0.0556858C4.01942 0.121426 2.5948 0.520506 1.55765 1.55765C0.516642 2.59867 0.121426 4.02022 0.0556858 5.45413C0.0108278 6.44407 0 6.76042 0 9.28097C0 11.8015 0.0108278 12.1179 0.0556858 13.1078C0.121426 14.541 0.522054 15.9695 1.55765 17.0043C2.5979 18.0445 4.02174 18.4405 5.45413 18.5062C6.44407 18.5511 6.76042 18.5619 9.28097 18.5619C11.8015 18.5619 12.1179 18.5511 13.1078 18.5062C14.5417 18.4405 15.9679 18.0406 17.0043 17.0043C18.0461 15.9625 18.4405 14.5417 18.5062 13.1078C18.5511 12.1179 18.5619 11.8015 18.5619 9.28097C18.5619 6.76042 18.5511 6.44407 18.5062 5.45413C18.4405 4.01942 18.0406 2.59403 17.0043 1.55765C15.9656 0.518962 14.5379 0.120653 13.1078 0.0556858C12.1179 0.0108278 11.8015 0 9.28097 0Z"
@@ -98,6 +122,123 @@
                 </a>
               </li>
             </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Секция результаты -->
+    <section class="results">
+      <div class="container">
+        <h2 class="visually-hidden">Наши показатели</h2>
+        <ul class="results__list">
+          <li class="results__item">
+            <span class="results__item-number">5+</span>
+            <span class="results__item-text">Years of Service</span>
+          </li>
+          <li class="results__item">
+            <span class="results__item-number">10+</span>
+            <span class="results__item-text">Certified Trainers</span>
+          </li>
+          <li class="results__item">
+            <span class="results__item-number">786+</span>
+            <span class="results__item-text">Happy Members</span>
+          </li>
+          <li class="results__item">
+            <span class="results__item-number">95%</span>
+            <span class="results__item-text">Customer Satisfaction</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <!-- Секция Почему вы выбрали нас -->
+    <section class="choose">
+      <div class="container">
+        <header class="section-header choose__header">
+          <h2 class="title">Why Choose Us</h2>
+          <p class="choose__subtitle">Exercise is defined as any physical activity that makes your muscles work and
+            requires your body to burn calories.</p>
+        </header>
+        <div class="choose__wrapper">
+          <ul class="choose__list">
+            <li class="choose__item item-1">
+              <div class="choose__item-image">
+                <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true">
+                  <path d="M16.75 0.75V5.75M4.75 0.75V5.75" stroke="white" stroke-width="1.5" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                  <path
+                    d="M19.25 1.75V3.25M19.25 3.25V4.75M19.25 3.25H20.75M2.25 1.75V3.25M2.25 3.25V4.75M2.25 3.25H0.75"
+                    stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M16.75 3.25H4.75" stroke="white" stroke-width="1.5" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                  <path
+                    d="M6.02653 16.75H15.4735C16.711 16.75 17.3297 16.75 17.5856 16.4474C18.1663 15.7607 17.0538 14.8531 16.6479 14.3956C16.1905 13.8802 15.8559 13.75 15.1799 13.75H6.32013C5.64408 13.75 5.30953 13.8802 4.85214 14.3956C4.44617 14.8531 3.33375 15.7607 3.91444 16.4474C4.17026 16.75 4.78902 16.75 6.02653 16.75Z"
+                    stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M7.75 5.75V13.75M13.75 5.75V13.75" stroke="white" stroke-width="1.5" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                  <path d="M14.75 16.75V18.75M6.75 16.75V18.75" stroke="white" stroke-width="1.5" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </div>
+              <div class="choose__item-body">
+                <h3 class="choose__item-title">Improved Physical Health</h3>
+                <p class="choose__item-text">Regular exercise can lead to enhanced cardiovascular health, stronger
+                  muscles
+                  and bones, improved flexibility, and increased endurance.</p>
+              </div>
+            </li>
+
+            <li class="choose__item item-2">
+              <div class="choose__item-image">
+                <svg width="14" height="22" viewBox="0 0 14 22" fill="none" xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true">
+                  <path
+                    d="M2.75147 19.75C2.75147 18.3358 2.75147 17.6287 3.19081 17.1893C3.63015 16.75 4.33726 16.75 5.75147 16.75H7.75147C9.16567 16.75 9.87277 16.75 10.3122 17.1893C10.7515 17.6287 10.7515 18.3358 10.7515 19.75V20.75H2.75147V19.75Z"
+                    stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M6.75147 11.75V16.75" stroke="white" stroke-width="1.5" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                  <path d="M0.751472 20.75H12.7515" stroke="white" stroke-width="1.5" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                  <path
+                    d="M7.78807 1.61651L8.84397 3.74573C8.98787 4.04212 9.37187 4.32642 9.69587 4.38086L11.6097 4.70145C12.8335 4.90712 13.1215 5.80236 12.2396 6.6855L10.7518 8.18563C10.4998 8.43968 10.3618 8.9296 10.4398 9.2805L10.8657 11.1375C11.2017 12.6074 10.4278 13.176 9.13787 12.4078L7.34407 11.3371C7.02017 11.1435 6.48617 11.1435 6.15627 11.3371L4.36243 12.4078C3.07857 13.176 2.29866 12.6013 2.63462 11.1375L3.06057 9.2805C3.13857 8.9296 3.00058 8.43968 2.74861 8.18563L1.26077 6.6855C0.384873 5.80236 0.666843 4.90712 1.8907 4.70145L3.80449 4.38086C4.12246 4.32642 4.50641 4.04212 4.6504 3.74573L5.70627 1.61651C6.28217 0.461163 7.21807 0.461163 7.78807 1.61651Z"
+                    stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div>
+              <div class="choose__item-body">
+                <h3 class="choose__item-title">Enhanced Mental Health</h3>
+                <p class="choose__item-text">Exercise releases endorphins, often referred to as the 'feel-good'
+                  hormones,
+                  which can elevate mood and reduce feelings of stress,</p>
+              </div>
+            </li>
+
+            <li class="choose__item item-3">
+              <div class="choose__item-image">
+                <svg width="22" height="16" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true">
+                  <path
+                    d="M9.25747 10.7602L15.8921 6.2489C16.0794 6.1098 16.2465 5.9455 16.3884 5.7612C16.8738 5.13041 16.8642 4.25551 16.5565 3.52366C15.8719 1.89514 14.2473 0.75 12.3521 0.75C11.4165 0.75 10.5469 1.02908 9.82377 1.50762L2.74426 6.5067"
+                    stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  <path
+                    d="M4.74722 9.2566C4.74722 9.9526 5.11575 11.3359 6.78788 11.7155C7.79385 11.9439 10.7247 10.9805 9.29068 8.1885C7.85676 5.39659 4.40358 5.38202 2.9989 6.3175C2.14048 6.8389 0.473395 8.4663 0.789445 10.6296C0.901625 11.9403 1.93368 14.5996 5.16446 14.7517H15.0558C15.9776 14.6786 16.1681 14.5449 16.8702 14.0062C17.8147 13.158 19.3922 11.5985 20.3086 10.5718C20.5066 10.35 20.7203 10.1217 20.7477 9.8257C20.8934 8.249 18.5009 8.9319 16.7678 8.744"
+                    stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+
+              </div>
+              <div class="choose__item-body">
+                <h3 class="choose__item-title">Increased Energy Levels</h3>
+                <p class="choose__item-text">Regular physical activity improves blood circulation and oxygen delivery to
+                  the body, resulting in increased energy levels and reduced fatigue</p>
+              </div>
+            </li>
+          </ul>
+          <div class="choose__pictures">
+            <img class="choose__pictures-img img-1" src="./img/choose/image1.jpg"
+              alt="Атлет тренируется с канатми в тренажерном зале" width="263" height="191">
+            <img class="choose__pictures-img img-2" src="./img/choose/imange-big.jpg"
+              alt="На бетонном полу лежит спортивный инвентарь" width="283" height="407">
+            <img class="choose__pictures-img img-3" src="./img/choose/image2.jpg"
+              alt="Общий вид на тренажерный зал и трнеажеры" width="263" height="189">
           </div>
         </div>
       </div>

@@ -3,15 +3,27 @@
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 2;
-  padding: rem(10) 0;
+  z-index: 1000;
+  padding: rem(16) 0;
+  background: rgba(10, 10, 10, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid transparent;
+  transition: all 0.3s ease;
+
+  // После скролла — непрозрачный фон + тень
+  &.scrolled {
+    background: var(--bg-dark);
+    border-bottom-color: var(--border);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+    padding: rem(12) 0;
+  }
+
   &__inner {
     display: flex;
     align-items: center;
     justify-content: space-between;
-  }
-
-  &__actions {
+    gap: rem(16);
   }
 
   &__btn {
@@ -23,16 +35,70 @@
   height: rem(54);
   flex-shrink: 0;
 }
-.desctop-nav {
+.desktop-nav {
   display: none;
   a {
     color: #fff;
   }
 }
+
 .burger {
-  background-color: var(--color-lite);
-  width: rem(40);
-  height: rem(40);
-  font-size: rem(30);
+  @include flex-center;
+  position: relative;
+  z-index: 1002; // Выше мобильного меню, чтобы было видно при открытом меню
+  width: rem(44);
+  height: rem(44);
+  border: 2px solid var(--primary);
   border-radius: var(--radius);
+  color: var(--primary);
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover,
+  &:focus-visible {
+    background: var(--primary);
+    color: var(--text-white);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(255, 107, 53, 0.3);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+
+  &__icon {
+    width: rem(24);
+    height: rem(24);
+    flex-shrink: 0;
+  }
+
+  // Линии бургера
+  &__line {
+    transition: all 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+    transform-origin: center;
+  }
+
+  // ===== АКТИВНОЕ СОСТОЯНИЕ (меню открыто) =====
+  &.active {
+    background: var(--primary);
+    color: var(--text-white);
+    border-color: var(--primary);
+
+    // Верхняя линия → диагональ вниз
+    .burger__line--top {
+      transform: translateX(-4px) translateY(3px) rotate(45deg);
+    }
+
+    // Средняя линия → исчезает
+    .burger__line--middle {
+      opacity: 0;
+      transform: scaleX(0);
+    }
+
+    // Нижняя линия → диагональ вверх
+    .burger__line--bottom {
+      transform: translateX(-4px) translateY(-5px) rotate(-45deg);
+    }
+  }
 }

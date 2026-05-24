@@ -1,8 +1,9 @@
 .hero {
   position: relative;
-  height: 100vh;
-  background: url("../../img/hero-bg.jpg") center / cover no-repeat;
+  height: 100dvh;
+  background: url("../../img/hero-bg.webp") center / cover no-repeat;
   overflow: hidden;
+  padding-top: rem(80);
   &__inner {
     height: 100%;
     display: flex;
@@ -38,15 +39,32 @@
   }
 }
 
-.social-box ul {
+.social-box__list {
   display: flex;
   align-items: center;
   gap: rem(24);
 }
 
-.social-box a {
-  svg:hover path {
-    transition: all 0.3s ease;
-    fill: var(--primary-hover);
+.social-box__link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: rem(44);
+  height: rem(44);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  transition: var(--transition);
+
+  &:hover {
+    border-color: var(--primary);
+    background-color: var(--primary);
+  }
+
+  svg path {
+    transition: fill 0.3s;
+  }
+
+  &:hover svg path {
+    fill: var(--color-lite);
   }
 }

@@ -9,8 +9,19 @@
   z-index: 10000;
   text-decoration: none;
   font-weight: 600;
-}
+  @include visually-hidden;
 
+  &:focus,
+  &:focus-visible {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: var(--primary);
+    color: var(--text-white);
+    padding: rem(12) rem(20);
+    z-index: 10000;
+  }
+}
 .skip-link:focus {
   top: 0;
 }

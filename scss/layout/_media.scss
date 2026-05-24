@@ -1,5 +1,13 @@
+@include mq(sm) {
+  .results {
+    &__list {
+      grid-template-columns: repeat(2, 1fr);
+      align-items: center;
+    }
+  }
+}
 @include mq(md) {
-  .desctop-nav {
+  .desktop-nav {
     display: block;
     ul {
       display: flex;
@@ -38,7 +46,7 @@
   }
   .header {
     &__btn {
-      display: block;
+      display: inline-flex;
     }
   }
 
@@ -46,18 +54,97 @@
   .overlay {
     display: none;
   }
+
+  .results {
+    padding: var(--spacing-xl) 0;
+    &__list {
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: var(--spacing-sm);
+      justify-content: space-between;
+    }
+  }
+
+  .choose {
+    &__pictures {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, auto);
+      gap: rem(10);
+    }
+    .img-1 {
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+    }
+    .img-2 {
+      grid-column: 2 / 3;
+      grid-row: 1 / 3;
+    }
+    .img-3 {
+      grid-column: 1 / 2;
+      grid-row: 2 / 3;
+    }
+  }
 }
 @include mq(lg) {
   .header {
     padding: rem(20) 0;
   }
   .hero__content {
-    max-width: rem(512);
+    max-width: rem(600);
   }
   .btn {
     padding: rem(12) rem(24);
   }
 }
+
+@include mq(xl) {
+  .choose {
+    &__wrapper {
+      grid-template-columns: 1.75fr 1.25fr;
+      align-items: center;
+      gap: var(--spacing-xl);
+    }
+    &__list {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      align-items: start;
+    }
+
+    &__item {
+      max-width: rem(400);
+    }
+    .item-1 {
+      grid-column: 1 / 3;
+      grid-row: 1 / 2;
+      justify-self: center;
+    }
+    .item-2 {
+      grid-column: 1 / 2;
+      grid-row: 2 / 3;
+    }
+    .item-3 {
+      grid-column: 2 / 3;
+      grid-row: 2 / 3;
+    }
+    &__pictures {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, auto);
+      gap: var(--spacing-md);
+    }
+    .img-1 {
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+    }
+    .img-2 {
+      grid-column: 2 / 3;
+      grid-row: 1 / 3;
+    }
+    .img-3 {
+      grid-column: 1 / 2;
+      grid-row: 2 / 3;
+    }
+  }
+}
+
 @include mq("2xl") {
   .logo {
     width: rem(88);
@@ -66,7 +153,7 @@
       width: 100%;
     }
   }
-  .desctop-nav ul {
+  .desktop-nav ul {
     a {
       font-size: rem(24);
     }

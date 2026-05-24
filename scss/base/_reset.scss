@@ -21,6 +21,7 @@ body {
   flex-direction: column;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--bg-body);
 }
 main,
 .main {
@@ -76,4 +77,9 @@ svg {
 
 p {
   overflow-wrap: break-word;
+}
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+  border-radius: 2px;
 }

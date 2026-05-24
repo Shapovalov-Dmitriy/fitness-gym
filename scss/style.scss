@@ -3,6 +3,7 @@
 @import "abstracts/variables";
 
 // 2. Base
+@import "base/fonts";
 @import "base/reset";
 @import "base/typography";
 
@@ -13,6 +14,9 @@
 
 // 4. Layout
 @import "layout/header";
+@import "layout/mobile-nav";
 @import "layout/hero";
+@import "layout/results";
+@import "layout/choose";
 @import "layout/footer";
 @import "layout/media";
