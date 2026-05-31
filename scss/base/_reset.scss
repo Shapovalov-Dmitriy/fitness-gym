@@ -83,3 +83,7 @@ p {
   outline-offset: 3px;
   border-radius: 2px;
 }
+
+section {
+  padding: var(--spacing-md) 0;
+}

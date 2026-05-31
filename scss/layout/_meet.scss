@@ -1,0 +1,32 @@
+.meet {
+  &__header {
+    margin-bottom: clamp(1.875rem, 0.9821rem + 4.4643vw, 3.75rem);
+  }
+
+  &__items {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xs);
+  }
+
+  &__item {
+    border-radius: rem(12);
+    overflow: hidden;
+    &:focus-within {
+      outline: 3px solid var(--primary);
+      outline-offset: 3px;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      transition: var(--transition);
+    }
+    @media (prefers-reduced-motion: no-preference) {
+      &:hover img {
+        transform: scale(1.1);
+      }
+    }
+  }
+}
