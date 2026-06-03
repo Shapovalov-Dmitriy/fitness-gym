@@ -184,3 +184,38 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
   });
 });
+// ---------------------------------------------------------------------------------
+/* Переключение тарифного плана */
+const pricingBtns = document.querySelectorAll('.pricing__btn');
+const priceCards = document.querySelectorAll('.price');
+const timeCards = document.querySelectorAll('.time');
+
+// Переключение активной кнопки
+pricingBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    pricingBtns.forEach(b => {
+      b.classList.remove('pricing__btn--active');
+      b.setAttribute('aria-pressed', 'false');
+    });
+    btn.classList.add('pricing__btn--active');
+    btn.setAttribute('aria-pressed', 'true');
+
+    updatePrices(btn.textContent.trim());
+  });
+});
+
+// Обновление цен из data-атрибутов
+function updatePrices(period) {
+  const isYearly = period === 'Yearly';
+
+  priceCards.forEach(card => {
+    const value = isYearly
+      ? card.dataset.yearly
+      : card.dataset.monthly;
+    card.textContent = value;
+  });
+
+  timeCards.forEach(card => {
+    card.textContent = isYearly ? 'Year' : 'Month';
+  });
+}

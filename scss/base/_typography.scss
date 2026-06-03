@@ -18,10 +18,18 @@ h1 {
     color: var(--text-primary);
     line-height: 1.4;
   }
+  &__reverse {
+    flex-direction: column-reverse;
+    margin-bottom: var(--spacing-md);
+  }
 }
 .section-header--center {
   max-width: rem(710);
   margin: 0 auto;
   align-items: center;
   text-align: center;
+}
+
+.mb {
+  margin-bottom: clamp(1.875rem, 0.9821rem + 4.4643vw, 3.75rem);
 }

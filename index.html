@@ -6,8 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Сайт тренажерного зала Chamith Fitness">
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-  <link rel="preload" href="/fonts/Rubik-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/fonts/Rubik-Bold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./fonts/Rubik-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./fonts/Rubik-Medium.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="./css/style.min.css">
   <title>Chamith Fitness | Тренажёрный зал</title>
 </head>
@@ -71,7 +71,7 @@
 
   <main id="main-content" role="main">
     <!-- Главная секция -->
-    <section class="hero" id="home" aria-label="Главный баннер">
+    <section class="section hero" id="home" aria-label="Главный баннер">
       <div class="container hero__inner">
         <div class="hero__content">
           <h2 class="hero__title">Live Your Best Life</h2>
@@ -128,7 +128,7 @@
       </div>
     </section>
     <!-- Секция результаты -->
-    <section class="results" aria-label="Наши достижения в цифрах">
+    <section class="section results" aria-label="Наши достижения в цифрах">
       <div class="container">
         <h2 class="visually-hidden">Наши показатели</h2>
         <ul class="results__list">
@@ -156,9 +156,9 @@
       </div>
     </section>
     <!-- Секция Почему вы выбрали нас -->
-    <section class="choose" id="choose" aria-label="Почему выбирают нас">
+    <section class="section choose" id="choose" aria-label="Почему выбирают нас">
       <div class="container">
-        <header class="section-header choose__header section-header--center">
+        <header class="section-header mb section-header--center">
           <h2 class="title">Why Choose Us</h2>
           <p class="section-header__subtitle">Exercise is defined as any physical activity that makes your muscles work
             and
@@ -239,30 +239,41 @@
             </div>
           </div>
           <div class="choose__pictures">
-            <img class="choose__pictures-img img-1" src="./img/choose/image1.webp"
-              alt="Атлет тренируется с канатми в тренажерном зале" width="263" height="191" loading="lazy">
-            <img class="choose__pictures-img img-2" src="./img/choose/imange-big.webp"
-              alt="На бетонном полу лежит спортивный инвентарь" width="283" height="407" loading="lazy">
-            <img class="choose__pictures-img img-3" src="./img/choose/image2.webp"
-              alt="Общий вид на тренажерный зал и трнеажеры" width="263" height="189" loading="lazy">
+            <div class="choose__pictures-img img-1">
+              <img src="./img/choose/image1.webp" alt="" aria-hidden="true" width="263" height="191" loading="lazy">
+            </div>
+            <div class="choose__pictures-img img-2">
+              <img src="./img/choose/imange-big.webp" alt="" aria-hidden="true" width="283" height="407" loading="lazy">
+            </div>
+            <div class="choose__pictures-img img-3">
+              <img src="./img/choose/image2.webp" alt="" aria-hidden="true" width="263" height="189" loading="lazy">
+            </div>
           </div>
         </div>
       </div>
     </section>
     <!-- Секция тренеры -->
-    <section class="mentor" id="mentor" aria-label="Наши тренеры">
+    <section class="section mentor" id="mentor" aria-label="Наши тренеры">
       <div class="container">
         <div class="mentor__inner">
           <div class="mentor__pictures">
-            <img class="mentor__img mentor__img--1" src="./img/coaches/girl-treaner.webp"
-              alt="Тренер Анна проводит функциональную тренировку с фитнес-мячом" loading="lazy" width="196"
-              height="346">
-            <img class="mentor__img mentor__img--2" src="./img/coaches/boy-treaner.webp"
-              alt="Мужчина тренер сидит на скамье и надевает напульсники на себе руки" loading="lazy" width="349"
-              height="349">
+            <div class="mentor__img mentor__img--1">
+              <a href="#" tabindex="0" aria-label="Посмотреть тренера">
+                <img src="./img/coaches/girl-treaner.webp"
+                  alt="Тренер Анна проводит функциональную тренировку с фитнес-мячом" loading="lazy" width="196"
+                  height="346">
+              </a>
+            </div>
+            <div class="mentor__img mentor__img--2">
+              <a href="#" tabindex="0" aria-label="Посмотреть тренера">
+                <img src="./img/coaches/boy-treaner.webp"
+                  alt="Тренер Владимир проводит тренировки по гимнастикеи легкой атлетике" loading="lazy" width="349"
+                  height="349">
+              </a>
+            </div>
           </div>
           <div class="mentor__content">
-            <header class="section-header mentor__header">
+            <header class="section-header section-header__reverse">
               <h2 class="title">Coaches</h2>
               <p class="section-header__subtitle">Are you looking for a Mentor?</p>
             </header>
@@ -276,38 +287,131 @@
       </div>
     </section>
     <!-- Секция Встерчайте наших тренеров -->
-    <section class="meet" aria-label="Встречайте наших тренеров">
+    <section class="section meet" aria-label="Встречайте наших тренеров">
       <div class="container">
-        <header class="section-header meet__header section-header--center">
+        <header class="section-header mb section-header--center">
           <h2 class="title">Meet Our Trainers</h2>
           <p class="section-header__subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
             tempor incididunt ut labore et</p>
         </header>
         <div class="meet__items">
           <div class="meet__item meet__item-1">
-            <img src="./img/meet/img-1.webp" alt="" loading="lazy" width="220" height="288">
+            <img src="./img/meet/img-1.webp" alt="" aria-hidden="true" loading="lazy" width="220" height="288">
           </div>
           <div class="meet__item meet__item-2">
-            <img src="./img/meet/img-2.webp" alt="" loading="lazy" width="574" height="288">
+            <img src="./img/meet/img-2.webp" alt="" aria-hidden="true" loading="lazy" width="574" height="288">
           </div>
           <div class="meet__item meet__item-3">
-            <img src="./img/meet/img-3.webp" alt="" loading="lazy" width="220" height="288">
+            <img src="./img/meet/img-3.webp" alt="" aria-hidden="true" loading="lazy" width="220" height="288">
           </div>
           <div class="meet__item meet__item-4">
-            <img src="./img/meet/img-4.webp" alt="" loading="lazy" width="397" height="288">
+            <img src="./img/meet/img-4.webp" alt="" aria-hidden="true" loading="lazy" width="397" height="288">
           </div>
           <div class="meet__item meet__item-5">
-            <img src="./img/meet/img-5.webp" alt="" loading="lazy" width="220" height="288">
+            <img src="./img/meet/img-5.webp" alt="" aria-hidden="true" loading="lazy" width="220" height="288">
           </div>
           <div class="meet__item meet__item-6">
-            <img src="./img/meet/img-6.webp" alt="" loading="lazy" width="397" height="288">
+            <img src="./img/meet/img-6.webp" alt="" aria-hidden="true" loading="lazy" width="397" height="288">
           </div>
         </div>
       </div>
     </section>
     <!-- Тарифный план -->
+    <section class="section pricing" aria-label="Тарифный план">
+      <div class="container">
+        <div class="pricing__wrapper mb">
+          <header class="section-header section-header__reverse">
+            <h2 class="title">Join Today</h2>
+            <p class="section-header__subtitle">Pricing Plan</p>
+          </header>
+          <div class="pricing__toggle" role="group" aria-label="Период оплаты">
+            <button class="pricing__btn pricing__btn--active" type="button" aria-pressed="true">
+              Monthly
+            </button>
+            <button class="pricing__btn" type="button" aria-pressed="false">
+              Yearly
+            </button>
+          </div>
+        </div>
 
+        <div class="pricing__cards">
+
+          <div class="pricing__card card">
+            <header class="card__header">
+              <h3 class="card__title">
+                Rs.<span class="price" data-monthly="2000" data-yearly="24000" aria-live="polite">2000</span>
+                / <span class="time">Month</span>
+              </h3>
+              <p class="card__subtitle">Beginner Plan</p>
+            </header>
+            <div class="card__body">
+              <p class="card__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                incididunt</p>
+              <ul class="card__list">
+                <li class="card__item">Lorem ipsum dolor sit amet,</li>
+                <li class="card__item">Lorem ipsum dolor sit amet,</li>
+                <li class="card__item">Lorem ipsum dolor sit amet,</li>
+                <li class="card__item">Lorem ipsum dolor sit amet,</li>
+              </ul>
+            </div>
+            <footer class="card__footer">
+              <button class="card__btn" aria-label="Выбрать тариф Beginner Plan — 2000 Rs в месяц">Choose Plan</button>
+            </footer>
+          </div>
+
+          <div class="pricing__card card card-black">
+            <header class="card__header">
+              <h3 class="card__title">
+                Rs.<span class="price" data-monthly="3000" data-yearly="36000" aria-live="polite">3000</span>
+                / <span class="time">Month</span>
+              </h3>
+              <p class="card__subtitle">Premium Plan</p>
+            </header>
+            <div class="card__body">
+              <p class="card__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                incididunt</p>
+              <ul class="card__list">
+                <li class="card__item">Lorem ipsum dolor sit amet,</li>
+                <li class="card__item">Lorem ipsum dolor sit amet,</li>
+                <li class="card__item">Lorem ipsum dolor sit amet,</li>
+                <li class="card__item">Lorem ipsum dolor sit amet,</li>
+                <li class="card__item">Lorem ipsum dolor sit amet,</li>
+              </ul>
+            </div>
+            <footer class="card__footer">
+              <button class="card__btn" aria-label="Выбрать тариф Premium Plan — 3000 Rs в месяц">Choose Plan</button>
+            </footer>
+          </div>
+
+          <div class="pricing__card card">
+            <header class="card__header">
+              <h3 class="card__title">
+                Rs. <span class="price" data-monthly="6000" data-yearly="72000" aria-live="polite">6000</span>
+                / <span class="time">Month</span>
+              </h3>
+              <p class="card__subtitle">Expert Plan</p>
+            </header>
+            <div class="card__body">
+              <p class="card__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                incididunt</p>
+              <ul class="card__list">
+                <li class="card__item">Lorem ipsum dolor sit amet,</li>
+                <li class="card__item">Lorem ipsum dolor sit amet,</li>
+                <li class="card__item">Lorem ipsum dolor sit amet,</li>
+                <li class="card__item">Lorem ipsum dolor sit amet,</li>
+                <li class="card__item">Lorem ipsum dolor sit amet,</li>
+                <li class="card__item">Lorem ipsum dolor sit amet,</li>
+              </ul>
+            </div>
+            <footer class="card__footer">
+              <button class="card__btn" aria-label="Выбрать тариф Expert Plan — 6000 Rs в месяц">Choose Plan</button>
+            </footer>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
+
   <footer class="footer" role="contentinfo">
     <div class="container">
       <h2 class="visually-hidden">Контакты и информация</h2>
